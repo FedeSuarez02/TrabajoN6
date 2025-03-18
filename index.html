@@ -15,123 +15,116 @@
         </div>
     </header>
     <main>
-        <div class="contenedor_principal">
-            <form action="index.html" method="POST">
-                <div class="contenedor_datos_personales">
-                    <fieldset class="datos_personales">
-                        <legend> 🙋🏼‍♂️Datos Personales 👀</legend>
-                        <div class="contenedor_categorias_personales">
-                            <div class="contenido_encolumnado">
-                                <label for="nombre">Nombre: *</label>
-                                <input type="text" name="nombre" id="nombre" pattern="^[A-Za-z\s]+$" required>
-                            </div>
-                            <div class="contenido_encolumnado">
-                                <label for="apellido">Apellido: *</label>
-                                <input type="text" name="apellido" id="apellido" pattern="^[A-Za-z\s]+$" required>
-                            </div>
-                            <div class="contenido_encolumnado">
-                                <label for="documento">Documento: *</label>
-                                <input type="text" name="documento" id="documento" required pattern="^[1-9][0-9]{0,7}$">
-                            </div>
-                            <div class="contenido_encolumnado">
-                                <label for="nacionalidad">Nacionalidad: *</label>
-                                <select name="nacionalidad" id="nacionalidad" required>
-                                    <option value="" disabled selected> - Seleccionar - </option>
-                                    <option value="argentina">Argentina</option>
-                                    <option value="brasil">Brasileña</option>
-                                    <option value="uruguay">Uruguaya</option>
-                                    <option value="otra">Otra</option>
-                                </select>
-                            </div>
-                            <div class="contenido_encolumnado">
-                                <label for="descripcion">Contanos un poco de vos...</label>
-                                <textarea id="descripcion" id="descripcion"></textarea>
-                            </div>
-                            <div class="contenido_encolumnado">
-                                <label for="sexo">Sexo: *</label>
-                                <div>
-                                    <input type="radio" name="sexo" id="sexo_femenino" value="femenino" checked
-                                        required>
-                                    <label for="sexo_femenino"> Femenino </label>
-                                    <input type="radio" name="sexo" id="sexo_masculino" value="masculino" required>
-                                    <label for="sexo_masculino"> Masculino </label>
-                                    <input type="radio" name="sexo" id="sexo_otro" value="otro" required>
-                                    <label for="sexo_otro"> Otro </label>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="contenedor_datos_contacto">
-                    <fieldset class="datos_contacto">
-                        <legend>📱 Datos de Contacto ✉️</legend>
-                        <div class="contenido_encolumnado">
-                            <label for="telefono">Teléfono:</label>
-                            <input type="text" name="telefono" id="telefono" pattern="^\d{2,3}[0-9]{8,10}$"
-                                placeholder="Código de área y número">
-                            <!-- el pattern es para que pueda agregar entre 2 y 3 digitos de codigo de area y despues entre 8 y 10 numeros de telefono, por si es un fijo o celular-->
-                        </div>
-                        <div class="contenido_encolumnado">
-                            <label for="mail">Dirección de correo electrónico: *</label>
-                            <input type="email" name="mail" id="mail"
-                                pattern="^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\.[a-zA-Z]{2,}$"
-                                placeholder="Ej: mail@gmail.com" required>
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="contenedor_actividades">
-                    <fieldset class="actividades">
-                        <legend>🚴Actividades🤸‍♂️</legend>
-                        <p>Por favor, indicá cuáles actividades te interesan.</p>
-                        <div>
-                            <div>
-                                <label for="sede">Sede Palermo:</label>
-                                <div>
-                                    <input type="checkbox" name="deporte" id="palermo_basquet" value="basquet">
-                                    <label for="palermo_basquet">Básquet</label>
-                                    <input type="checkbox" name="deporte" id="palermo_boxeo" value="boxeo">
-                                    <label for="palermo_boxeo">Boxeo</label>
-                                    <input type="checkbox" name="deporte" id="palermo_futbol" value="futbol">
-                                    <label for="palermo_futbol">Fútbol</label>
-                                    <input type="checkbox" name="deporte" id="palermo_tenis" value="Tenis">
-                                    <label for="palermo_tenis">Tenis</label>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="sede">Sede Rosario:</label>
-                                <div>
-                                    <input type="checkbox" name="deporte" id="rosario_basquet" value="basquet">
-                                    <label for="rosario_basquet">Básquet</label>
-                                    <input type="checkbox" name="deporte" id="rosario_futbol" value="futbol">
-                                    <label for="rosario_futbol">Fútbol</label>
-                                    <input type="checkbox" name="deporte" id="rosario_rugby" value="rugby">
-                                    <label for="rosario_rugby">Rugby</label>
-                                    <input type="checkbox" name="deporte" id="rosario_voley" value="voley">
-                                    <label for="rosario_voley">Voley</label>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="contenedor_condiciones">
-                    <div>
-                        <input type="checkbox" id="condiciones" required>
-                        <label for="condiciones">Acepto las condiciones*</label>
+        <form action="index.html" method="POST">
+            <fieldset class="datos_personales">
+                <legend> 🙋🏼‍♂️Datos Personales 👀</legend>
+                <div class="contenedor_categorias">
+                    <div class="contenido_encolumnado">
+                        <label for="nombre">Nombre: *</label>
+                        <input type="text" name="nombre" id="nombre" pattern="^[A-Za-z\s]+$" required>
                     </div>
-                    <div>
-                        <input type="checkbox" id="novedades" checked>
-                        <label for="novedades">Deseo recibir novedades</label>
+                    <div class="contenido_encolumnado">
+                        <label for="apellido">Apellido: *</label>
+                        <input type="text" name="apellido" id="apellido" pattern="^[A-Za-z\s]+$" required>
                     </div>
-                    <p>*: campo obligatorio.</p>
+                    <div class="contenido_encolumnado">
+                        <label for="documento">Documento: *</label>
+                        <input type="text" name="documento" id="documento" required pattern="^[1-9][0-9]{0,7}$">
+                    </div>
+                    <div class="contenido_encolumnado">
+                        <label for="nacionalidad">Nacionalidad: *</label>
+                        <select name="nacionalidad" id="nacionalidad" required>
+                            <option value="" disabled selected> - Seleccionar - </option>
+                            <option value="argentina">Argentina</option>
+                            <option value="brasil">Brasileña</option>
+                            <option value="uruguay">Uruguaya</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </div>
+                    <div class="contenido_encolumnado">
+                        <label for="descripcion">Contanos un poco de vos...</label>
+                        <textarea id="descripcion" id="descripcion"></textarea>
+                    </div>
+                    <div class="contenido_encolumnado">
+                        <label for="sexo">Sexo: *</label>
+                        <div class="input_seleccion">
+                            <input type="radio" name="sexo" id="sexo_femenino" value="femenino" checked required>
+                            <label for="sexo_femenino"> Femenino </label>
+                            <input type="radio" name="sexo" id="sexo_masculino" value="masculino" required>
+                            <label for="sexo_masculino"> Masculino </label>
+                            <input type="radio" name="sexo" id="sexo_otro" value="otro" required>
+                            <label for="sexo_otro"> Otro </label>
+                        </div>
+                    </div>
                 </div>
+            </fieldset>
+            <fieldset class="datos_contacto">
+                <legend>📱 Datos de Contacto ✉️</legend>
+                <div class="contenedor_categorias">
+                    <div class="contenido_encolumnado">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" name="telefono" id="telefono" pattern="^\d{2,3}[0-9]{8,10}$"
+                        placeholder="Código de área y número">
+                        <!-- el pattern es para que pueda agregar entre 2 y 3 digitos de codigo de area y despues entre 8 y 10 numeros de telefono, por si es un fijo o celular-->
+                    </div>
+                    <div class="contenido_encolumnado">
+                        <label for="mail">Dirección de correo electrónico: *</label>
+                        <input type="email" name="mail" id="mail"
+                        pattern="^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\.[a-zA-Z]{2,}$" placeholder="Ej: mail@gmail.com"
+                        required>
+                    </div>
+                </div>
+                </fieldset>
+            <fieldset class="actividades">
+                <legend>🚴Actividades🤸‍♂️</legend>
+                <p>Por favor, indicá cuáles actividades te interesan.</p>
+                <div>
+                    <div class="contenido_izquierda">
+                        <label for="sede">Sede Palermo:</label>
+                        <div class="input_seleccion">
+                            <input type="checkbox" name="deporte" id="palermo_basquet" value="basquet">
+                            <label for="palermo_basquet">Básquet</label>
+                            <input type="checkbox" name="deporte" id="palermo_boxeo" value="boxeo">
+                            <label for="palermo_boxeo">Boxeo</label>
+                            <input type="checkbox" name="deporte" id="palermo_futbol" value="futbol">
+                            <label for="palermo_futbol">Fútbol</label>
+                            <input type="checkbox" name="deporte" id="palermo_tenis" value="Tenis">
+                            <label for="palermo_tenis">Tenis</label>
+                        </div>
+                    </div>
+                    <div class="contenido_izquierda">
+                        <label for="sede">Sede Rosario:</label>
+                        <div class="input_seleccion">
+                            <input type="checkbox" name="deporte" id="rosario_basquet" value="basquet">
+                            <label for="rosario_basquet">Básquet</label>
+                            <input type="checkbox" name="deporte" id="rosario_futbol" value="futbol">
+                            <label for="rosario_futbol">Fútbol</label>
+                            <input type="checkbox" name="deporte" id="rosario_rugby" value="rugby">
+                            <label for="rosario_rugby">Rugby</label>
+                            <input type="checkbox" name="deporte" id="rosario_voley" value="voley">
+                            <label for="rosario_voley">Voley</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="contenedor_condiciones">
+                <div class="input_seleccion">
+                    <input type="checkbox" id="condiciones" required>
+                    <label for="condiciones">Acepto las condiciones*</label>
+                </div>
+                <div class="input_seleccion">
+                    <input type="checkbox" id="novedades" checked>
+                    <label for="novedades">Deseo recibir novedades</label>
+                </div>
+                <p>*: campo obligatorio.</p>
+            </div>
+            <div>
                 <div class="contenedor_botones">
-                    <div>
-                        <button type="submit">Iniciar afiliación</button>
-                        <button type="reset">Restablecer</button>
-                    </div>
+                    <button type="submit">Iniciar afiliación</button>
+                    <button type="reset">Restablecer</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </main>
 </body>
 <script src="funciones/funciones_index.js"></script>
