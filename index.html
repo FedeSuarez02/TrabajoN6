@@ -21,42 +21,41 @@
                     <fieldset class="datos_personales">
                         <legend> 🙋🏼‍♂️Datos Personales 👀</legend>
                         <div class="contenedor_categorias_personales">
-                            <div>
+                            <div class="contenido_encolumnado">
                                 <label for="nombre">Nombre: *</label>
-                                <input type="text" name="nombre" id="nombre" required>
+                                <input type="text" name="nombre" id="nombre" pattern="^[A-Za-z\s]+$" required>
                             </div>
-                            <div>
+                            <div class="contenido_encolumnado">
                                 <label for="apellido">Apellido: *</label>
-                                <input type="text" name="apellido" id="apellido" required>
+                                <input type="text" name="apellido" id="apellido" pattern="^[A-Za-z\s]+$" required>
                             </div>
-                            <div>
+                            <div class="contenido_encolumnado">
                                 <label for="documento">Documento: *</label>
-                                <input type="text" name="documento" id="documento" required>
+                                <input type="text" name="documento" id="documento" required pattern="^[1-9][0-9]{0,7}$">
                             </div>
-                            <div>
+                            <div class="contenido_encolumnado">
                                 <label for="nacionalidad">Nacionalidad: *</label>
-                                <select name="nacionalidad" id="nacionalidad">
-                                    <option value="seleccionar"> - Seleccionar - </option>
+                                <select name="nacionalidad" id="nacionalidad" required>
+                                    <option value="" disabled selected> - Seleccionar - </option>
                                     <option value="argentina">Argentina</option>
-                                    <option value="brasil">Brasil</option>
-                                    <option value="mexico">Mexico</option>
-                                    <option value="españa">España</option>
-                                    <option value="uruguay">Uruguay</option>
-                                    <option value="colombia">Colombia</option>
+                                    <option value="brasil">Brasileña</option>
+                                    <option value="uruguay">Uruguaya</option>
+                                    <option value="otra">Otra</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="contenido_encolumnado">
                                 <label for="descripcion">Contanos un poco de vos...</label>
                                 <textarea id="descripcion" id="descripcion"></textarea>
                             </div>
-                            <div>
+                            <div class="contenido_encolumnado">
                                 <label for="sexo">Sexo: *</label>
                                 <div>
-                                    <input type="radio" name="sexo" id="sexo_femenino" value="femenino" checked>
+                                    <input type="radio" name="sexo" id="sexo_femenino" value="femenino" checked
+                                        required>
                                     <label for="sexo_femenino"> Femenino </label>
-                                    <input type="radio" name="sexo" id="sexo_masculino" value="femenino">
+                                    <input type="radio" name="sexo" id="sexo_masculino" value="masculino" required>
                                     <label for="sexo_masculino"> Masculino </label>
-                                    <input type="radio" name="sexo" id="sexo_otro" value="femenino">
+                                    <input type="radio" name="sexo" id="sexo_otro" value="otro" required>
                                     <label for="sexo_otro"> Otro </label>
                                 </div>
                             </div>
@@ -66,14 +65,17 @@
                 <div class="contenedor_datos_contacto">
                     <fieldset class="datos_contacto">
                         <legend>📱 Datos de Contacto ✉️</legend>
-                        <div>
+                        <div class="contenido_encolumnado">
                             <label for="telefono">Teléfono:</label>
-                            <input type="text" name="telefono" id="telefono" placeholder="Código de área y número"
-                                required>
+                            <input type="text" name="telefono" id="telefono" pattern="^\d{2,3}[0-9]{8,10}$"
+                                placeholder="Código de área y número">
+                            <!-- el pattern es para que pueda agregar entre 2 y 3 digitos de codigo de area y despues entre 8 y 10 numeros de telefono, por si es un fijo o celular-->
                         </div>
-                        <div>
+                        <div class="contenido_encolumnado">
                             <label for="mail">Dirección de correo electrónico: *</label>
-                            <input type="email" name="mail" id="mail" placeholder="Ej: mail@gmail.com" required>
+                            <input type="email" name="mail" id="mail"
+                                pattern="^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\.[a-zA-Z]{2,}$"
+                                placeholder="Ej: mail@gmail.com" required>
                         </div>
                     </fieldset>
                 </div>
@@ -87,13 +89,10 @@
                                 <div>
                                     <input type="checkbox" name="deporte" id="palermo_basquet" value="basquet">
                                     <label for="palermo_basquet">Básquet</label>
-
                                     <input type="checkbox" name="deporte" id="palermo_boxeo" value="boxeo">
                                     <label for="palermo_boxeo">Boxeo</label>
-
                                     <input type="checkbox" name="deporte" id="palermo_futbol" value="futbol">
                                     <label for="palermo_futbol">Fútbol</label>
-
                                     <input type="checkbox" name="deporte" id="palermo_tenis" value="Tenis">
                                     <label for="palermo_tenis">Tenis</label>
                                 </div>
@@ -114,20 +113,27 @@
                         </div>
                     </fieldset>
                 </div>
-                <div>
-                    <input type="checkbox" id="condiciones" required>
-                    <label for="condiciones">Acepto las condiciones*</label>
+                <div class="contenedor_condiciones">
+                    <div>
+                        <input type="checkbox" id="condiciones" required>
+                        <label for="condiciones">Acepto las condiciones*</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="novedades" checked>
+                        <label for="novedades">Deseo recibir novedades</label>
+                    </div>
+                    <p>*: campo obligatorio.</p>
                 </div>
-                <div>
-                    <input type="checkbox" id="novedades" checked>
-                    <label for="novedades">Deseo recibir novedades</label>
-                </div>
-                <p>*: campo obligatorio.</p>
-                <div>
-                    <button type="submit">Iniciar afiliación</button>
-                    <button type="reset">Restablecer</button>
+                <div class="contenedor_botones">
+                    <div>
+                        <button type="submit">Iniciar afiliación</button>
+                        <button type="reset">Restablecer</button>
+                    </div>
                 </div>
             </form>
+        </div>
     </main>
 </body>
+<script src="funciones/funciones_index.js"></script>
+
 </html>

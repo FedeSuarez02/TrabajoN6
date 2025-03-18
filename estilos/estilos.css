@@ -119,3 +119,92 @@
 }
 
 /* fonts */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 32, 35);
+    color: #E8EAED;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.contenedor_principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:100;
+    font-size: 12px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+
+fieldset {
+    background-color: #D6E2DE;
+    color: rgb(31, 32, 35);
+    border: 1px solid #4D6D63;
+    border-radius: 1px;
+}
+
+legend {
+    text-transform: uppercase;
+    font-size: 0.6em;
+    font-weight: bold;
+    background-color: #4D6D63;
+    border-radius: 4px;
+    padding: 0.5em;
+    margin-left: 1em;
+    justify-content: center;
+    align-items: center;
+    color: #E8EAED;
+}
+
+.letra_grande {
+    font-size: 1.3em;
+}
+
+.contenedor_categorias_personales {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75em;
+    margin-top: 15px;
+}
+
+.contenido_encolumnado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+input {
+    border: 1px solid #7D968E;
+    border-radius: 2px;
+}
+
