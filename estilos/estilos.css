@@ -165,7 +165,7 @@ body {
             left: 0;
             right: 0;
             height: 10px;
-            background-color: #4D6D63; 
+            background-color: var(--color-primario)
         }
 
         .titulo::before {
@@ -195,9 +195,9 @@ form {
 }
 
 fieldset {
-    background-color: #D6E2DE;
+    background-color: var(--color-secundario);
     color: rgb(31, 32, 35);
-    border: 1px solid #4D6D63;
+    border: 1px solid var(--color-cuaternario);
     border-radius: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -208,7 +208,7 @@ legend {
     text-transform: uppercase;
     font-size: 0.6em;
     font-weight: bold;
-    background-color: #4D6D63;
+    background-color: var(--color-primario);
     border-radius: 4px;
     padding: 0.5em;
     margin-left: 1em;
@@ -232,7 +232,7 @@ legend {
 .separador span {
     width: 10px;
     height: 10px;
-    background-color: #a0b0a0; 
+    background-color:var(--color-secundario);
     border-radius: 50%;
     display: inline-block;
 }
@@ -271,7 +271,7 @@ legend {
 
 
 input {
-    border: 1px solid #7D968E;
+    border: 1px solid var(--color-secundario);
     border-radius: 2px;
     width: 100%;
     text-align: right;
@@ -331,7 +331,7 @@ textarea {
     font-weight: 400;
     font-style: normal;
     font-size: 10px;
-    color: #7D968E;
+    color: var(--color-cuaternario);
     text-align: right;
 }
 
@@ -351,29 +351,29 @@ button {
     font-style: normal;
     font-size: 10px;
     padding: 6px;
-    border: 1px solid #4D6D63;
+    border: 1px solid var(--color-primario);
     border-radius: 2px;
-    color: #AAC6BB;
-    background-color: #2B3D37;
+    color: var(--color-secundario);
+    background-color: var(--color-terciario);
     cursor: pointer;
 }
 
 button:hover {
-    background-color:  #AAC6BB;
-    color: #4D6D63;
+    background-color:  var(--color-secundario);
+    color: var(--color-primario);
 }
 
 fieldset:focus-within {
-    background-color: #A6C1B9;
+    background-color: var(--color-secundario);
 }
 
 fieldset:focus-within legend {
-    background-color: #2B3D37;
+    background-color: var(--color-terciario);
 }
 
 fieldset input:focus {
-    background-color: #4D6D63;
-    color: #E8EAED;
+    background-color: var(--color-primario);
+    color: var(--color-quintenario);
     border: 1px solid black;
 }
 
@@ -382,7 +382,7 @@ fieldset select:focus {
 }
 
 fieldset textarea:focus {
-    background-color: #4D6D63;
+    background-color: var(--color-primario);
     border: 1px solid black;
     color: #E8EAED;
 }
