@@ -7,7 +7,7 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:100;
+    font-variation-settings: 100;
 }
 
 .poppins-thin {
@@ -126,7 +126,9 @@
     --color-terciario: #2B3D37;
     --color-cuaternario: #7D968E;
     --color-quintenario: #D6E2DE;
-}
+    --color-fondo: rgb(31, 32, 35);
+    --color-letras: rgb(232, 234, 237);
+} 
 
 * {
     margin: 0;
@@ -135,16 +137,21 @@
 }
 
 body {
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(31, 32, 35);
-    color: #E8EAED;
+    background-color: var(--color-fondo);
+    color: var(--color-letras);
+    transform: scale(1.3);
+    transform-origin: top;
 }
 
-.titulo{
-
+.titulo {
     position: relative;
     width: 100%;
     min-width: 400px;
@@ -159,26 +166,26 @@ body {
 }
 
 .titulo::before,
-        .titulo::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background-color: var(--color-primario)
-        }
+.titulo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: var(--color-primario)
+}
 
-        .titulo::before {
-            top: -10px;
-            /* clip-path: polygon(0% 100%, 100% 100%, 95% 0%, 5% 0%); */
-            clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
-        }
+.titulo::before {
+    top: -10px;
+    /* clip-path: polygon(0% 100%, 100% 100%, 95% 0%, 5% 0%); */
+    clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+}
 
-        .titulo::after {
-            bottom: -10px;
-            /* clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%); */
-            clip-path: polygon(0% 100%, 100% 100%, 95% 0%, 5% 0%);
-        }
+.titulo::after {
+    bottom: -10px;
+    /* clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%); */
+    clip-path: polygon(0% 100%, 100% 100%, 95% 0%, 5% 0%);
+}
 
 form {
     width: 100%;
@@ -195,10 +202,10 @@ form {
 }
 
 fieldset {
-    background-color: var(--color-secundario);
-    color: rgb(31, 32, 35);
+    background-color: var(--color-quintenario);
+    color: var(--color-fondo);
     border: 1px solid var(--color-cuaternario);
-    border-radius: 1px;
+    border-radius: 4px;
     padding-top: 10px;
     padding-bottom: 10px;
 
@@ -214,25 +221,25 @@ legend {
     margin-left: 1em;
     justify-content: center;
     align-items: center;
-    color: #E8EAED;
+    color: var(--color-letras);
 }
 
 .letra_grande {
     font-size: 1.3em;
 }
 
-.separador{
+.separador {
     display: flex;
     justify-content: center;
-    gap: 8px; 
-    margin: 10px 0; 
+    gap: 8px;
+    margin: 10px 0;
 
 }
 
 .separador span {
     width: 10px;
     height: 10px;
-    background-color:var(--color-secundario);
+    background-color: var(--color-secundario);
     border-radius: 50%;
     display: inline-block;
 }
@@ -269,7 +276,6 @@ legend {
     margin: 10px;
 }
 
-
 input {
     border: 1px solid var(--color-secundario);
     border-radius: 2px;
@@ -284,12 +290,11 @@ input {
     flex-wrap: wrap;
     gap: 5px;
     margin-bottom: 5px;
-    font-size: 11px;       
+    font-size: 11px;
 }
 
-.input_seleccion input{
+.input_seleccion input {
     width: auto;
-    ;
 }
 
 input[type="checkbox"] {
@@ -301,7 +306,7 @@ input[type="radio"] {
 }
 
 select {
-    border: 1px solid #7D968E;
+    border: 1px solid var(--color-cuaternario);
     border-radius: 2px;
     width: 100%;
     font-family: "Roboto", sans-serif;
@@ -312,7 +317,7 @@ select {
 }
 
 textarea {
-    border: 1px solid #7D968E;
+    border: 1px solid var(--color-cuaternario);
     resize: vertical;
     overflow: auto;
     border-radius: 2px;
@@ -330,9 +335,10 @@ textarea {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 10px;
+    font-size: 9px;
     color: var(--color-cuaternario);
     text-align: right;
+    margin-right: 2px;
 }
 
 form div p {
@@ -359,7 +365,7 @@ button {
 }
 
 button:hover {
-    background-color:  var(--color-secundario);
+    background-color: var(--color-secundario);
     color: var(--color-primario);
 }
 
@@ -373,23 +379,24 @@ fieldset:focus-within legend {
 
 fieldset input:focus {
     background-color: var(--color-primario);
-    color: var(--color-quintenario);
-    border: 1px solid black;
+    color: var(--color-letras);
+    border: 1px solid var(--color-fondo);
+}
+
+fieldset input:focus::placeholder {
+    color: var(--color-letras);
 }
 
 fieldset select:focus {
-    border: 1px solid black;
+    border: 1px solid var(--color-fondo);
 }
 
 fieldset textarea:focus {
     background-color: var(--color-primario);
-    border: 1px solid black;
-    color: #E8EAED;
+    border: 1px solid var(--color-fondo);
+    color: var(--color-letras);
 }
 
 /* 
-Bordes del Titulo (diagonal)
 Chequear si funciona todo bien con respecto al responsivo
-
-
-
+*/
