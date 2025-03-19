@@ -7,3 +7,108 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const linkEstilos = document.getElementById("link_estilos");
+    const cambiarEstilos = document.querySelector(".cambio_estilos button");
+    const estiloAleatorio = document.querySelector(".aleatorio button");
+    const recordarEstilo = document.querySelector(".recordar button");
+    const estilosSelector = document.getElementById("estilos_selector");
+    const radioEstilos = document.querySelectorAll('input[name="radio_estilos"]');
+
+    const listaEstilos = [
+        "estilos/estilos-base.css",
+        "estilos/estilos-retro.css",
+        "estilos/estilos-futuro.css",
+    ];
+
+    const sinEstilos = "estilos/estilos-vacio.css";
+
+    let currentIndex = 0;
+
+    const estiloGuardado = localStorage.getItem("estiloActual");
+    if (estiloGuardado) {
+            linkEstilos.href = estiloGuardado;
+        }
+
+    const reseteoSelecciones = () => {
+        estilosSelector.selectedIndex = 0;
+        radioEstilos.forEach((radio) => (radio.checked = false));
+    };
+
+    cambiarEstilos.addEventListener("click", function () {
+        currentIndex = (currentIndex + 1) % listaEstilos.length;
+        linkEstilos.href = listaEstilos[currentIndex];
+    });
+
+    estiloAleatorio.addEventListener("click", function () {
+        const randomIndex = Math.floor(Math.random() * (listaEstilos.length + 1));
+        if (randomIndex === listaEstilos.length) {
+            linkEstilos.removeAttribute("href");
+        } else {
+            linkEstilos.href = listaEstilos[randomIndex];
+        }
+    });
+
+    recordarEstilo.addEventListener("click", function () {
+        const estiloActual = linkEstilos.getAttribute ("href");
+        if (localStorage.getItem("estiloActual")) {
+            localStorage.removeItem("estiloActual");
+        } else {
+            localStorage.setItem("estiloActual", estiloActual);
+        }
+    });
+
+    estilosSelector.addEventListener("change", function () {
+        let estiloSeleccionado;
+        switch (estilosSelector.value) {
+            case "sin_estilos":
+                estiloSeleccionado = sinEstilos;
+                linkEstilos.href = estiloSeleccionado;
+                break;
+            case "estilo_base":
+                estiloSeleccionado = listaEstilos[0];
+                linkEstilos.href = estiloSeleccionado;
+                break;
+            case "estilo_retro":
+                estiloSeleccionado = listaEstilos[1];
+                linkEstilos.href = estiloSeleccionado;
+                break;
+            case "estilo_futuro":
+                estiloSeleccionado = listaEstilos[2];
+                linkEstilos.href = estiloSeleccionado;
+                break;
+        }
+        localStorage.setItem("estiloActual", estiloSeleccionado);
+        reseteoSelecciones();
+    });
+
+    radioEstilos.forEach((radio) => {
+        radio.addEventListener("change", function () {
+            let estiloSeleccionado;
+            switch (radio.value) {
+                case "sin_estilo":
+                    estiloSeleccionado = sinEstilos;
+                    linkEstilos.href = estiloSeleccionado;
+                    break;
+                case "estilo_base":
+                    estiloSeleccionado = listaEstilos[0];
+                    linkEstilos.href = estiloSeleccionado;
+                    break;
+                case "estilo_retro":
+                    estiloSeleccionado = listaEstilos[1];
+                    linkEstilos.href = estiloSeleccionado;
+                    break;
+                case "estilo_futuro":
+                    estiloSeleccionado = listaEstilos[2];
+                    linkEstilos.href = estiloSeleccionado;
+                    break;
+            }
+            localStorage.setItem("estiloActual", estiloSeleccionado);
+            reseteoSelecciones();
+        });
+    });
+});
+
+
+/* falta agregar que el boton "quede apretado" si hay datos en el localStorage */

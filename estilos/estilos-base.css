@@ -400,3 +400,44 @@ fieldset textarea:focus {
 /* 
 Chequear si funciona todo bien con respecto al responsivo
 */
+
+.contenedor_ejercicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.contenedor_seleccion_estilos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    align-items: center;
+    gap: 1em;
+}
+
+.contenedor_radio_estilos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    align-items: center;
+    gap: 1em;
+}
+
+.radio_estilos_opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+.radio_estilos_opciones input {
+    width: auto;
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="estilos/estilos.css" />
+    <link id="link_estilos" rel="stylesheet" href="estilos/estilos-base.css" />
     <title>Afiliación - Ballarini, Jonathan / Suarez, Federico</title>
 </head>
 
@@ -137,7 +137,42 @@
             </div>
         </form>
     </main>
+    <footer>
+        <div class="contenedor_ejercicios">
+            <div class="cambio_estilos">
+                <button>Cambiar Estilo</button>
+            </div>
+            <div class="aleatorio">
+                <button>Estilo Aleatorio</button>
+            </div>
+            <div class="recordar">
+                <button>Recordar Estilo</button>
+            </div>
+            <fieldset class="contenedor_seleccion_estilos">
+                <legend for="seleccionar_estilos">Seleccionar Estilos</legend>
+                <select name="seleccionar_estilos" id="estilos_selector" required>
+                    <option value="" disabled selected>- Seleccionar -</option>
+                    <option value="sin_estilos">Sin estilos</option>
+                    <option value="estilo_base">Estilo Base</option>
+                    <option value="estilo_retro">Retro</option>
+                    <option value="estilo_futuro">Futuro</option>
+                </select>
+            </fieldset>
+            <fieldset class="contenedor_radio_estilos">
+                <legend for="label_radio">Seleccionar Estilos</legend>
+                <div class="radio_estilos_opciones">
+                    <input type="radio" name="radio_estilos" id="radio_sin_estilos" value="sin_estilo"/>
+                    <label for="radio_sin_estilos"> Sin Estilo </label>
+                    <input type="radio" name="radio_estilos" id="radio_estilo_base" value="estilo_base"/>
+                    <label for="radio_estilo_base"> Estilo Base </label>
+                    <input type="radio" name="radio_estilos" id="radio_estilo_retro" value="estilo_retro"/>
+                    <label for="radio_estilo_retro"> Retro </label>
+                    <input type="radio" name="radio_estilos" id="radio_estilo_futuro" value="estilo_futuro"/>
+                    <label for="radio_estilo_futuro"> Futuro </label>
+                </div>
+            </fieldset>
+        </div>
+    </footer>
 </body>
 <script src="funciones/funciones_index.js"></script>
-
 </html>

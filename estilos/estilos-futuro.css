@@ -1,0 +1,39 @@
+
+body {
+    background-color: antiquewhite;
+}
+
+/* CSS HEX
+--amaranth-purple: #b7094cff;
+--murrey: #a01a58ff;
+--byzantium: #892b64ff;
+--finn: #723c70ff;
+--ultra-violet: #5c4d7dff;
+--yinmn-blue: #455e89ff;
+--ucla-blue: #2e6f95ff;
+--cerulean: #1780a1ff;
+--blue-munsell: #0091adff; */
+
+
+/* SCSS RGB
+$amaranth-purple: rgba(183, 9, 76, 1);
+$murrey: rgba(160, 26, 88, 1);
+$byzantium: rgba(137, 43, 100, 1);
+$finn: rgba(114, 60, 112, 1);
+$ultra-violet: rgba(92, 77, 125, 1);
+$yinmn-blue: rgba(69, 94, 137, 1);
+$ucla-blue: rgba(46, 111, 149, 1);
+$cerulean: rgba(23, 128, 161, 1);
+$blue-munsell: rgba(0, 145, 173, 1); */
+
+/* CSS HEX
+--nyanza: #d8f3dcff;
+--celadon: #b7e4c7ff;
+--celadon-2: #95d5b2ff;
+--mint: #74c69dff;
+--mint-2: #52b788ff;
+--sea-green: #40916cff;
+--dartmouth-green: #2d6a4fff;
+--brunswick-green: #1b4332ff;
+--dark-green: #081c15ff; */
+
