@@ -197,6 +197,22 @@ legend {
     font-size: 1.3em;
 }
 
+.separador{
+    display: flex;
+    justify-content: center;
+    gap: 8px; 
+    margin: 10px 0; 
+
+}
+
+.separador span {
+    width: 10px;
+    height: 10px;
+    background-color: #a0b0a0; 
+    border-radius: 50%;
+    display: inline-block;
+}
+
 .contenedor_categorias {
     display: flex;
     flex-direction: column;
@@ -226,7 +242,9 @@ legend {
     flex-direction: column;
     width: 300px;
     gap: 1em;
+    margin: 10px;
 }
+
 
 input {
     border: 1px solid #7D968E;
@@ -241,12 +259,12 @@ input {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    margin: auto;
-    margin-bottom: 5px;
+    margin-bottom: 5px;       
 }
 
 .input_seleccion input{
     width: auto;
+    ;
 }
 
 select {
@@ -338,7 +356,6 @@ fieldset textarea:focus {
 
 /* 
 Bordes del Titulo (diagonal)
-Interlineado de circulos entre divs
 Chequear si funciona todo bien con respecto al responsivo
 Opciones del ultimo div tienen que estar contra la izquierda
 */
