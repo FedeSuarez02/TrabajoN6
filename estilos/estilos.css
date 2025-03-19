@@ -120,6 +120,14 @@
 
 /* fonts */
 
+:root {
+    --color-primario: #4D6D63;
+    --color-secundario: #AAC6BB;
+    --color-terciario: #2B3D37;
+    --color-cuaternario: #7D968E;
+    --color-quintenario: #D6E2DE;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -226,6 +234,7 @@ input {
     width: 100%;
     text-align: right;
     outline: none;
+    font-size: 10px;
 }
 
 .input_seleccion {
@@ -248,6 +257,7 @@ select {
     font-weight: 400;
     font-style: normal;
     font-size: 10px;
+    outline: none;
 }
 
 textarea {
@@ -316,9 +326,20 @@ fieldset input:focus {
     border: 1px solid black;
 }
 
+fieldset select:focus {
+    border: 1px solid black;
+}
+
 fieldset textarea:focus {
     background-color: #4D6D63;
     border: 1px solid black;
     color: #E8EAED;
 }
+
+/* 
+Bordes del Titulo (diagonal)
+Interlineado de circulos entre divs
+Chequear si funciona todo bien con respecto al responsivo
+Opciones del ultimo div tienen que estar contra la izquierda
+*/
 
