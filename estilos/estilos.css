@@ -260,12 +260,21 @@ input {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    margin-bottom: 5px;       
+    margin-bottom: 5px;
+    font-size: 11px;       
 }
 
 .input_seleccion input{
     width: auto;
     ;
+}
+
+input[type="checkbox"] {
+    transform: scale(0.7);
+}
+
+input[type="radio"] {
+    transform: scale(0.7);
 }
 
 select {
