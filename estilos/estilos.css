@@ -178,6 +178,7 @@ fieldset {
     border-radius: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
+
 }
 
 legend {
@@ -224,7 +225,7 @@ legend {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 300px;
+    width: 350px;
     align-items: center;
     gap: 1em;
 }
@@ -357,6 +358,6 @@ fieldset textarea:focus {
 /* 
 Bordes del Titulo (diagonal)
 Chequear si funciona todo bien con respecto al responsivo
-Opciones del ultimo div tienen que estar contra la izquierda
-*/
+
+
 
