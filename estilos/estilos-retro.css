@@ -129,9 +129,11 @@ legend {
     font-family: "Yatra One", system-ui;
     font-weight: 400;
     font-style: bold;
-    color: #000000;
-    
-    
+    color: #000000;    
+}
+
+.contenido_encolumnado input{
+    width: 350px;
 }
 
 
@@ -147,7 +149,6 @@ legend {
 }
 
 .opciones_sedes {
-    
     border: solid 3px var(--color-secundario);
     background-color: var(--color-terciario);
     display: flex;

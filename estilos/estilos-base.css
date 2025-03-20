@@ -141,6 +141,10 @@ legend {
     gap: 1em;
 }
 
+.contenido_encolumnado input{
+    width: 100%;
+}
+
 .actividades {
     display: flex;
     flex-direction: column;
