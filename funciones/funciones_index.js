@@ -27,9 +27,24 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
 
     const estiloGuardado = localStorage.getItem("estiloActual");
+    const recordarDiv = document.querySelector(".recordar");
+    
     if (estiloGuardado) {
-            linkEstilos.href = estiloGuardado;
+        linkEstilos.href = estiloGuardado;
+        recordarDiv.classList.replace("recordar", "boton_apretado");
+    } else {
+        recordarDiv.classList.replace("boton_apretado", "recordar");
+    }
+
+    const actualizarBotonRecordar = () => {
+        const estiloGuardado = localStorage.getItem("estiloActual");
+        if (estiloGuardado) {
+            recordarDiv.classList.replace("recordar", "boton_apretado");
+        } else {
+            recordarDiv.classList.replace("boton_apretado", "recordar");
         }
+    };
+        
 
     const reseteoSelecciones = () => {
         estilosSelector.selectedIndex = 0;
@@ -50,14 +65,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    recordarEstilo.addEventListener("click", function () {
-        const estiloActual = linkEstilos.getAttribute ("href");
-        if (localStorage.getItem("estiloActual")) {
-            localStorage.removeItem("estiloActual");
-        } else {
-            localStorage.setItem("estiloActual", estiloActual);
-        }
-    });
+    if (recordarEstilo) {
+        recordarEstilo.addEventListener("click", function () {
+            const estiloActual = linkEstilos.getAttribute("href");
+            if (localStorage.getItem("estiloActual")) {
+                localStorage.removeItem("estiloActual");
+                if (recordarDiv) {
+                    recordarDiv.classList.remove("boton_apretado");
+                    recordarDiv.classList.add("recordar");
+                }
+            } else {
+                localStorage.setItem("estiloActual", estiloActual);
+                if (recordarDiv) {
+                    recordarDiv.classList.add("boton_apretado");
+                    recordarDiv.classList.remove("recordar");
+                }
+            }
+        });
+    };
 
     estilosSelector.addEventListener("change", function () {
         let estiloSeleccionado;
@@ -81,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         localStorage.setItem("estiloActual", estiloSeleccionado);
         reseteoSelecciones();
+        actualizarBotonRecordar();
     });
 
     radioEstilos.forEach((radio) => {
@@ -106,9 +132,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             localStorage.setItem("estiloActual", estiloSeleccionado);
             reseteoSelecciones();
+            actualizarBotonRecordar();
         });
     });
 });
 
-
-/* falta agregar que el boton "quede apretado" si hay datos en el localStorage */

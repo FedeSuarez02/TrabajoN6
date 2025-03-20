@@ -6,15 +6,12 @@
     font-style: normal;
 }
 
-/* Colores */
-
 :root {
     --color-primario: #68270e;
     --color-secundario: #d65519;
     --color-terciario: #ECDCBF;
     --color-cuaternario: #d8d4c7;
     --color-quintenario: #000000;
-
 }
 
 
@@ -23,6 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.5s ease;
 }
 
 
@@ -257,7 +255,22 @@ button {
     cursor: pointer;
 }
 
+.aleatorio button{
+    width: 70px;
+    height: auto;
+}
+
+.boton_imagen {
+    width: 100%;
+    height: auto;
+}
+
 button:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+}
+
+.boton_apretado button {
     background-color: var(--color-secundario);
     color: var(--color-primario);
 }
