@@ -1,14 +1,12 @@
 
-
 document.addEventListener("DOMContentLoaded", function () {
+
     document.querySelectorAll("legend").forEach(function (legend) {
         legend.innerHTML = legend.textContent.replace(/\b(\w{4,})/g, function(match) {
             return "<span class='letra_grande'>" + match.charAt(0) + "</span>" + match.slice(1);
         });
     });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
     const linkEstilos = document.getElementById("link_estilos");
     const cambiarEstilos = document.querySelector(".cambio_estilos button");
     const estiloAleatorio = document.querySelector(".aleatorio button");

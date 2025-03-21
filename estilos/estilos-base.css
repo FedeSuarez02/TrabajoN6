@@ -94,7 +94,7 @@ fieldset {
 
 legend {
     text-transform: uppercase;
-    font-size: 0.6em;
+    font-size: 1em;
     font-weight: bold;
     background-color: var(--color-primario);
     border-radius: 4px;
@@ -103,6 +103,12 @@ legend {
     justify-content: center;
     align-items: center;
     color: var(--color-letras);
+}
+
+nav legend {
+    font-size: 0.6em;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
 }
 
 .letra_grande {
@@ -177,16 +183,16 @@ input {
     font-size: 11px;
 }
 
+.input_seleccion input {
+    width: auto;
+}
+
 .opciones_condiciones {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     margin-bottom: 5px;
     font-size: 11px;
-}
-
-.input_seleccion input {
-    width: auto;
 }
 
 input[type="checkbox"] {
@@ -324,6 +330,10 @@ fieldset textarea:focus {
     gap: 1em;
 }
 
+.contenedor_seleccion_estilos select{
+    width: 80%;
+}
+
 .contenedor_radio_estilos {
     display: flex;
     flex-direction: column;
@@ -339,8 +349,12 @@ fieldset textarea:focus {
     gap: 5px;
     margin-bottom: 5px;
     font-size: 11px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .radio_estilos_opciones input {
     width: auto;
 }
+
