@@ -334,6 +334,9 @@ fieldset textarea:focus {
 }
 
 .contenedor_radio_estilos {
+    font-family: "Yatra One", system-ui;
+    font-weight: 400;
+    font-style: bold;
     display: flex;
     flex-direction: column;
     justify-content: center;
